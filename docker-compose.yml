@@ -7,15 +7,16 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
+    env_file:
+      - .env
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/tour_booking_db
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=Sang5850!
 
   mysql:
     image: mysql:8.0
+    env_file:
+      - .env
     environment:
-      - MYSQL_ROOT_PASSWORD=Sang5850!
       - MYSQL_DATABASE=tour_booking_db
     ports:
       - "3306:3306"
