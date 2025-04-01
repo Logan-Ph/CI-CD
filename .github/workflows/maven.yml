@@ -24,7 +24,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-  jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -46,4 +45,5 @@ jobs:
         with:
           push: true
           tags: user/app:latest
+          
           
