@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.jackson.Jacksonized;
 
@@ -37,12 +36,10 @@ public class Customer {
     @Column(name = "password", nullable = false)
     String password;
 
-    
     @Column(name = "membership_tier", nullable = false, length = 50)
     @Enumerated(EnumType.STRING)
     MembershipTierType membershipTier;
 
     @OneToMany(mappedBy = "customerId", cascade = CascadeType.ALL)
-	@ToString.Exclude
 	List<Booking> bookings;
 }

@@ -14,7 +14,7 @@ public class DiscountStrategyFactory {
             case PERCENTAGE:
                 return new PercentageDiscountStrategy(value);
             default:
-                throw new NullPointerException("Invalid discount type: " + type);
+                throw new IllegalArgumentException("Invalid discount type: " + type);
         }
     }
 }

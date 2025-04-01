@@ -33,7 +33,7 @@ class BookingControllerTest {
     @Mock
     private CustomerService customerService;
 
-    @Mock  
+    @Mock
     private VoucherService voucherService;
 
     @Mock

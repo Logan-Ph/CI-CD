@@ -47,6 +47,7 @@ public class BookingController {
         return new ResponseEntity<>("Booking not found", HttpStatus.NOT_FOUND);
     }
 
+    // voucher code should be in booking service
     @PostMapping
     @Operation(summary = "Create a new booking", description = "Create a new booking with the provided details")
     public ResponseEntity<Object> createBooking(@RequestParam String customerId, @RequestParam String tourId, @RequestParam(required = false) String voucherCode) {
